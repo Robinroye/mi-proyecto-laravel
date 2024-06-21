@@ -11,7 +11,7 @@
 <body>
     <header>
         <section class="header-logo justify-content-center align-items-enter">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            <img src="{{ asset('images/logoR.png') }}" alt="Logo">
         </section>
         <section class="buscar">
             <input type="texto" placeholder="Buscar" required>

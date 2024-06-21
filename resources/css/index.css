@@ -5,25 +5,27 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  
 }
 :root
 {
   --white:#ffffff;
   --black:#000000;
-  --header-footer:#f7f6f6;
-  --papayawhip:#ffecd7;
+  --header-footer:#add6ad;
   --linkhover:#0c59cf;
   --linkactive:#3f3ad7;
   --purple-dark:#170312;
   --purple-medium:#33032D;
   --purple-light:#531253;
   --gray-light:#eaeaea;
-  --white:#f4fffd; 
+  --background:#eaf6d5; 
 }
-html 
+a{
+  color: #545454;
+}
+html body 
 {
   font-size: 62.5%; 
+  background-color: #eaf6d5;
 }
 header
 {
@@ -62,7 +64,6 @@ header .buscar:hover input
  box-shadow: 0 1rem  1rem 0 #20212447;
  border: 0.2rem solid #c6c6c6;
  color: #222;
-
 }
 header .buscar .btn
 {
@@ -117,10 +118,9 @@ header .ayuda:active
 }
 main
 {
-
   width: 100%;
   height:auto;
-  background:var(--white);
+  background:var(--background);
   font-size: 20px;
 }
 main img
@@ -133,7 +133,7 @@ main .navegation
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color:#c5d6b5;
+  background-color:#7fb275;
   border: 0.1rem solid #cfcfcf;
   padding: 0.5rem;
   margin-bottom: 4rem;
@@ -142,11 +142,9 @@ main .navegation
   font-family: open sans;
   position: sticky;
   text-align: center;
-  
 }
 .servi
 {
-  
   display: flex;
   flex-wrap: wrap;
   float: auto;
@@ -158,22 +156,21 @@ main .navegation
 {
   display: inline-block;
   padding: 1rem 2rem;
-  font-size: 2.6rem;
-  margin: 0 10px;
+  font-size: 1.6rem;
+  margin: 1rem 1rem;
   transition: .5s ease all;
   text-decoration: none;
-  color: var(--gray-light);
+  background-color:#7fb275;
 }
 .serviciosR a:hover
 { 
   transform: translateY(10px);
-  background-color: #c5d6b5;
+  background-color:#7fb275;
   border-radius: 1.5rem;
 }
 .serviciosR a:active
 {
-  color:var(--linkactive);
-  
+  color:var(--linkactive);  
 }
 /* .publicity
 {
