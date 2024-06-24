@@ -13,9 +13,7 @@ route::controller(HomeController::class)->group(function(){
     Route::get('variedades', 'variedades')->name('variedades');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::middleware([
     'auth:sanctum',
