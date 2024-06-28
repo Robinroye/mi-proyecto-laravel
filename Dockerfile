@@ -1,8 +1,9 @@
 # Usar una imagen base de PHP con FPM
-FROM php-8.3.8/app
+FROM php:8.3-fpm
 
 # Instalar dependencias del sistema
-RUN apt-get update && apt-get install -y nodejs npm\
+RUN apt-get update && apt-get install -y \
+    nodejs npm\
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
