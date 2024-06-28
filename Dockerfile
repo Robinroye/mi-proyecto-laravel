@@ -1,5 +1,5 @@
 # Usar una imagen base de PHP con FPM
-FROM sail-8.3/app
+FROM php-8.3.8/app
 
 # Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y nodejs npm\
