@@ -1,9 +1,9 @@
-# Usar una imagen base de PHP con FPM
+# Usar una imagen base de PHP 8.3 con FPM
 FROM php:8.3-fpm
 
 # Instalar dependencias del sistema
 RUN apt-get update && apt-get install -y \
-    nodejs npm\
+    nodejs npm \
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
@@ -38,6 +38,9 @@ RUN composer install --no-dev --optimize-autoloader
 # Instalar las dependencias de NPM
 RUN npm install
 RUN npm run build
+
+# Crear los directorios de log necesarios
+RUN mkdir -p /var/log/php-fpm /var/log/nginx
 
 # Configurar permisos
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
