@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y nodejs npm\
     libzip-dev \
     nginx \
     supervisor
-    docker-compose build
 # Instalar extensiones de PHP necesarias
 RUN docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl bcmath gd
 
