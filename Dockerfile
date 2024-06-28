@@ -1,8 +1,8 @@
 # Usar una imagen base de PHP con FPM
-FROM php:8.0-fpm
+FROM sail-8.3/app
 
 # Instalar dependencias del sistema
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y nodejs npm\
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     nginx \
     supervisor
-
+    docker-compose build
 # Instalar extensiones de PHP necesarias
 RUN docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl bcmath gd
 
@@ -32,10 +32,10 @@ WORKDIR /var/www
 COPY . /var/www
 
 # Instalar las dependencias de PHP
-# RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader
 
 # Instalar las dependencias de NPM
-# RUN npm install
+RUN npm install
 RUN npm run build
 
 # Configurar permisos
