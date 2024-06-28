@@ -1,9 +1,8 @@
 # Usar una imagen base de PHP con FPM
-FROM php:8.0-fpm
+FROM sail-8.3/app
 
 # Instalar dependencias del sistema
-RUN apt-get update && apt-get install -y \
-    nodejs npm \
+RUN apt-get update && apt-get install -y nodejs npm\
     build-essential \
     libpng-dev \
     libjpeg62-turbo-dev \
