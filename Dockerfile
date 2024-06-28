@@ -35,7 +35,7 @@ COPY . /var/www
 # RUN composer install --no-dev --optimize-autoloader
 
 # Instalar las dependencias de NPM
-RUN npm install
+# RUN npm install
 RUN npm run build
 
 # Configurar permisos
