@@ -32,7 +32,7 @@ WORKDIR /var/www
 COPY . /var/www
 
 # Instalar las dependencias de PHP
-RUN composer install --no-dev --optimize-autoloader
+# RUN composer install --no-dev --optimize-autoloader
 
 # Instalar las dependencias de NPM
 RUN npm install
