@@ -1,4 +1,4 @@
-# Usar una imagen base de PHP 8.3 con FPM
+# Usar una imagen base de PHP con FPM
 FROM php:8.3-fpm
 
 # Instalar dependencias del sistema
@@ -23,8 +23,8 @@ RUN apt-get update && apt-get install -y \
 # Instalar extensiones de PHP necesarias
 RUN docker-php-ext-install pdo pdo_mysql mbstring zip exif pcntl bcmath gd
 
-# Instalar Composer globalmente
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+# Descargar e instalar Composer manualmente
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Establecer el directorio de trabajo
 WORKDIR /var/www
@@ -39,11 +39,12 @@ RUN composer install --no-dev --optimize-autoloader
 RUN npm install
 RUN npm run build
 
-# Crear los directorios de log necesarios
-RUN mkdir -p /var/log/php-fpm /var/log/nginx
-
 # Configurar permisos
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+
+# Crear directorios de logs y configurar permisos
+RUN mkdir -p /var/log/nginx /var/log/php-fpm
+RUN chown -R www-data:www-data /var/log/nginx /var/log/php-fpm
 
 # Copiar archivos de configuración de Nginx y supervisord
 COPY .docker/nginx.conf /etc/nginx/nginx.conf
