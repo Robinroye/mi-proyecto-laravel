@@ -2,20 +2,19 @@
 FROM php:8.3-fpm-alpine
 
 # Instalar dependencias del sistema
-RUN apt-get update && apt-get install -y \
+RUN apk update && apk add --no-cache \
     nodejs npm \
-    build-essential \
+    build-base \
     libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
+    libjpeg-turbo-dev \
+    freetype-dev \
     zip \
     jpegoptim optipng pngquant gifsicle \
     vim \
     unzip \
     git \
     curl \
-    libonig-dev \
+    oniguruma-dev \
     libzip-dev \
     nginx \
     supervisor
