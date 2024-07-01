@@ -1,15 +1,19 @@
 # Usar una imagen base de PHP con FPM
-FROM php:8.3-fpm
+FROM php:8.3-fpm-alpine
 
 # Instalar dependencias del sistema
 RUN apk update && apk add --no-cache \
-    nodejs npm \
+    nodejs \
+    npm \
     build-base \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
     zip \
-    jpegoptim optipng pngquant gifsicle \
+    jpegoptim \
+    optipng \
+    pngquant \
+    gifsicle \
     vim \
     unzip \
     git \
