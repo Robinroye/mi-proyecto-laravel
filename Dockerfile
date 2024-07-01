@@ -1,5 +1,5 @@
 # Usar una imagen base de PHP con FPM
-FROM php:8.3-fpm-alpine
+FROM php:8.3-fpm
 
 # Instalar dependencias del sistema
 RUN apk update && apk add --no-cache \

@@ -34,19 +34,19 @@
             </div>
         </section>
     </header>
-    <section class="navegation">
+    <!-- <section class="navegation"> -->
         <nav>
-            <ul class="servi">
-                <li class="serviciosR"><a href="{{ route('index') }}"> Home</a></li>
-                <li class="serviciosR"><a href="{{ route('variedades') }}"> Variedades</a></li>
-                <li class="serviciosR"><a href="{{ route('giros') }}"> Giros</a></li>
-                <li class="serviciosR"><a href="{{ route('tramites') }}"> Tramites</a></li>
-                <li class="serviciosR"><a href="{{ route('carrito') }}"> Carrito</a></li>
-                <li class="serviciosR"><a href="{{ route('encuentranos') }}"> Encuentranos</a></li>
-                <li class="serviciosR"><a href="{{ route('contacto') }}"> Contacto</a></li> 
+            <ul class="nav nav-tabs servi" id="myTab" role="tablist">
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('index') }}"> Home</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('variedades') }}"> Variedades</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('giros') }}"> Giros</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('tramites') }}"> Tramites</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('carrito') }}"> Carrito</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('encuentranos') }}"> Encuentranos</a></li>
+                <li class="serviciosR nav-item" role="presentation"><a class="rounded" href="{{ route('contacto') }}"> Contacto</a></li> 
             </ul>
         </nav>
-    </section>
+   <!--  </section> -->
     @yield('content')
 </body>
 
